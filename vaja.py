@@ -1,5 +1,5 @@
-a=106
-b=16
+a=int(input("Vnesi prvo število."))
+b=int(input("Vnesi drugo število."))
 ostanek=a%b
 zadnji = 0
 
@@ -9,7 +9,7 @@ while ostanek!=0:
 	ostanek=a%b
 
 	a, b = b, ostanek
-	
+
 
 	print(ostanek, "ostanek")
 

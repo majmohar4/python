@@ -9,17 +9,17 @@ import random
 pravilne = 0
 napacne = 0
 operacija=input("Vpiši 1 za seštevanje, 2 za odštevanje in 3 za množenje.")
-steviloracunov=input("Koliko računov želiš?")
+steviloracunov=int(input("Koliko računov želiš?"))
 tocke = 0
 procenti = 0
 operacija = int(operacija)
+steviloracunov2 = steviloracunov
 while steviloracunov != 0:
     if operacija == 1:
         stevilka1=random.randint(1, 10)
         stevilka2=random.randint(1, 10)
-        racun = input("Koliko je ", str(stevilka1), " + ", str(stevilka2), "?")
-        racun = int(racun)
-        steviloracunov= steviloracunov -1
+        racun = int(input("Koliko je "+ str(stevilka1)+ " + "+ str(stevilka2)+ "?"))
+        steviloracunov= steviloracunov - 1
 
         if racun== (stevilka1 + stevilka2):
             print("Odgovor je pravilen.")
@@ -31,7 +31,7 @@ while steviloracunov != 0:
     if operacija == 2:
         stevilka1=random.randint(1, 10)
         stevilka2=random.randint(1, 10)
-        racun = input("Koliko je ", str(stevilka1), " - ", str(stevilka2), "?")
+        racun = int(input("Koliko je "+ str(stevilka1)+ " - "+ str(stevilka2)+ "?"))
         racun = int(racun)
         steviloracunov= steviloracunov -1
 
@@ -45,7 +45,7 @@ while steviloracunov != 0:
     if operacija == 3:
         stevilka1=random.randint(1, 10)
         stevilka2=random.randint(1, 10)
-        racun = input("Koliko je ", str(stevilka1), " x ", str(stevilka2), "?")
+        racun = int(input("Koliko je "+ str(stevilka1)+ " x "+ str(stevilka2)+ "?"))
         racun = int(racun)
         steviloracunov= steviloracunov -1
 
@@ -58,5 +58,5 @@ while steviloracunov != 0:
             napacne = napacne + 1
 
 print("Dosegel si ", tocke, " stevilo točk.")
-procenti = (pravilne / steviloracunov) * 100
+procenti = (pravilne / steviloracunov2) * 100
 print("Dosegel si ", procenti, " %.")
