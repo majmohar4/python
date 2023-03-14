@@ -1,4 +1,5 @@
 import random
+a = 20
 
 stevilka = random.randint(1, 100)
 poskus = int(input("Ugani številko med 1 in 100: "))
@@ -15,8 +16,11 @@ if poskusi != 0:
         #veckratnik
         if izbiranamiga == 1:
             večkratnik = stevilka * stevilo1
-            print("Večkratnik tega števila je" + večkratnik)
+            print("Večkratnik tega števila je" + str(večkratnik))
         
         elif izbiranamiga == 2:
-            while a >= 1:
-                
+            if a >= 1:
+                if poskus % a == 0:
+                    print("Delitelj tega števila je "+ str((a)))
+                else :
+                    a = a - 1
