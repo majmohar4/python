@@ -2,7 +2,7 @@ import random
 
 def večkratnik(stevilo):
     stevilo1 = random.randint(1, 5)
-    večkratnik = stevilka * stevilo1
+    večkratnik = stevilo * stevilo1
 def delitelj(stevilka, a):
     while a > 1:
                 if poskus % a == 0:
@@ -27,37 +27,43 @@ vsiposkusi = poskusi
 točke = 0
 možnetočke = 10
 a = 0
+vsiposkusi = poskusi
 
 while poskusi != 0:
-    poskus = int(input("Vnesi tvoj naslednji poskus."))
-    
-    if poskus != stevilka:
-        izbiranamiga = random.randint(1, 4)
-        print("Številka ni prava.")
-        namig2 = int(input("Ali želiš namig?"))
-        namig2 = namig2.lower
-        if namig2 == "ja":
-            možnetočke = možnetočke - 1
-            #veckratnik
-            if izbiranamiga == 1:
-                večkratnik(stevilka)
-                namig()
-                print("Večkratnik tega števila je" + str(večkratnik))
-            elif izbiranamiga == 2:
-                delitelj(stevilka, a)
-                namig()
-                print("Deljitelj tega stevila je" + a)
-            elif izbiranamiga == 3:
-                namig()
-                primerjava(poskus, stevilka)
-            elif izbiranamiga == 4:
-                namig()
-                večkratnik(stevilka)
-                delitelj(stevilka, a)
-                primerjava(poskus, stevilka)
-            print("Poskusi še enkrat!")
-        else :
-             print("Poskusi še enkrat.")
+    if vsiposkusi != poskusi:
+        poskus = int(input("Vnesi tvoj naslednji poskus."))
+
+    if vsiposkusi >= poskusi:
+        poskus = int(input("Vnesi tvoj naslednji poskus."))
+        if poskus != stevilka:
+            izbiranamiga = random.randint(1, 4)
+            print("Številka ni prava.")
+            namig2 = str(input("Ali želiš namig?"))
+            namig2 = namig2.lower()
+            if (namig2 == "ja"):
+                možnetočke = možnetočke - 1
+                #veckratnik
+                if izbiranamiga == 1:
+                    večkratnik(stevilka)
+                    namig()
+                    print("Večkratnik tega števila je" + str(večkratnik))
+                elif izbiranamiga == 2:
+                    namig()
+                    delitelj(stevilka, a)
+                elif izbiranamiga == 3:
+                    namig()
+                    primerjava(poskus, stevilka)
+                elif izbiranamiga == 4:
+                    namig()
+                    večkratnik(stevilka)
+                    delitelj(stevilka, a)
+                    primerjava(poskus, stevilka)
+                poskusi = poskusi - 1
+                if poskusi != 0:
+                    print("Poskusi še enkrat!")
+
 if vsiposkusi == poskusi:
      print("Bravo! Uganil si v prvem poiskusu.")
 točke = točke + možnetočke
+print("Dobil si " + točke)
+print("Nisi uganil števila.")
