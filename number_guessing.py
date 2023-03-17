@@ -27,14 +27,14 @@ vsiposkusi = poskusi
 točke = 0
 možnetočke = 10
 a = 0
+index=1
 vsiposkusi = poskusi
 
 while poskusi != 0:
-    if vsiposkusi != poskusi:
+    if vsiposkusi != poskusi or index!=1:
+        
         poskus = int(input("Vnesi tvoj naslednji poskus."))
-
     if vsiposkusi >= poskusi:
-        poskus = int(input("Vnesi tvoj naslednji poskus."))
         if poskus != stevilka:
             izbiranamiga = random.randint(1, 4)
             print("Številka ni prava.")
@@ -59,6 +59,7 @@ while poskusi != 0:
                     delitelj(stevilka, a)
                     primerjava(poskus, stevilka)
                 poskusi = poskusi - 1
+                index+=1
                 if poskusi != 0:
                     print("Poskusi še enkrat!")
 
