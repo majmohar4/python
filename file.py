@@ -1,10 +1,14 @@
 
-file=open("dorian.txt", "a")
+file=open("dorian.txt", "r+")
 
-file.write("Doriana ni v šoli.\n")
+besedilo=file.read()
+
+"""""
+poskus = str(input("vpiši geslo"))
+if poskus == geslo:
+    print("geslo je pravilno")
+"""""
 
 
-file=open("dorian.txt", "r")
-dorian = str(file.read())
-print(dorian[0:6])
-
+if "1234" in besedilo:
+    print("našel sem")
